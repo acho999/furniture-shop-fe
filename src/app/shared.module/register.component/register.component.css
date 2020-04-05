@@ -1,0 +1,70 @@
+.spinner{
+    position: fixed;
+    z-index: 50;
+    top:0;
+    left:0;
+    background: rgba(0, 0, 0, 0.55);
+    width: 100vw;
+    height: 100vh;
+}
+#spinner{
+    font-size: 20px;
+     color: white;
+}
+
+.message{
+    text-align:center;
+    top:10vh;
+    left:35vw;
+    width: 30vw;
+    height: 10vw;
+    z-index: 100;
+    position: fixed;
+    background-color:rgb(121, 182, 121);
+    border-radius: 10px;
+}
+
+small{
+    font-weight: bold;
+    color: red;
+}
+
+.formDiv{
+    top:5vh;
+    left:40vw;
+    width: 20vw;
+    height: 90vh; 
+    position: fixed;
+    z-index: 100;
+    background-color:rgba(241, 239, 239, 0.975);
+    border:2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(209, 201, 201, 0.712);
+}
+
+input{
+    box-shadow: 10px 5px 5px rgb(139, 136, 136);
+    border:1px solid black;
+}
+
+.successMessage{
+    top:15vh;
+    left:40vw;
+    width: 20vw;
+    height: 20vh; 
+    position: fixed;
+    z-index: 100;
+    background-color:rgb(121, 182, 121);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 40px;
+}
+
+@media screen and (max-width:1024px){
+    .formDiv{
+    top:0vh;
+    left:0vw;
+    width: 50vw;
+    height: 100vh;
+    }
+}

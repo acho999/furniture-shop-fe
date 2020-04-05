@@ -1,0 +1,32 @@
+<div id="backGroundDiv" (click)="onClose($event)"></div>
+
+<div *ngIf='show' [@login_reg] id="container">
+    <div class="container-fluid">
+      <div class="row">
+        <br/>
+        <a class="col-lg-1 col-lg-offset-10" (click)="onClose($event)" href="#">X</a>
+        <form (ngSubmit)="onSubmit(adminForm)" class="col-sm-10 col-sm-offset-1 " #adminForm="ngForm">
+          
+          <div class="form-group">
+            <label for="username">Потребителско име:</label>
+            <input ngModel #username='ngModel' name="username" required type="text" class="form-control small" placeholder="Потребителско име" id="username">
+            <small *ngIf="!username.valid && username.touched">Полето е задължително!</small>
+            <small *ngIf="showUsernameErorr">{{showUsernameErorr}}</small>
+
+          </div>
+          <div class="form-group">
+            <label for="password">Парола:</label>
+            <input ngModel #password='ngModel' name="password" required type="password" class="form-control small" placeholder="Парола" id="password">
+            <small *ngIf="!password.valid && password.touched">Полето е задължително!</small>
+            <small *ngIf="showPasswordErorr">{{showPasswordErorr}}</small>
+
+          </div>
+          <div class="form-group form-check">
+            
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 

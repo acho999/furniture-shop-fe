@@ -1,0 +1,40 @@
+#backGroundDiv{
+    position: fixed;
+    z-index: 50;
+    top:0;left:0;
+    background: rgba(0, 0, 0, 0.75);
+    width: 100vw;
+    height: 100vh;
+}
+
+/*#errorMessage{
+    text-align:center;
+    top:20vh;
+    left:35vw;
+    width: 30vw;
+    height: 10vw;
+    z-index: 100;
+    position: fixed;
+    background-color:rgb(121, 182, 121);
+    border-radius: 10px;
+}*/
+
+#container{
+    top:25vh;
+    left:38vw;
+    width: 25vw;
+    height: 40vh; position: fixed;
+    z-index: 100;
+    background-color:rgb(241, 239, 239, 0.975);
+    box-shadow: 5px 5px 5px rgba(209, 201, 201, 0.712);
+    border-radius: 10px;
+}
+
+small{
+    color:red;
+    font-weight: bold;
+}
+
+input{
+    box-shadow: 5px 5px 5px rgb(139, 136, 136);
+}

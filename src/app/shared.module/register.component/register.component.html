@@ -1,0 +1,57 @@
+<div class="spinner" (click)="onClose($event)"></div>
+<ngx-spinner fullScreen="true">
+  <p id="spinner" >Loading...</p>
+</ngx-spinner>
+<div class="successMessage" *ngIf="showAfterRegMessage" [@messageAfterReg]>Регистрацията успешна!</div>
+  <div *ngIf='showForm' class="formDiv"[@login_reg]>
+    <div class="container-fluid">
+      <div class="row">
+        <a class="float-right" (click)="onClose($event)" href="#">X</a>
+        <form class=" col-lg-10 col-lg-offset-1" (ngSubmit)="onSubmit(adminForm)" #adminForm="ngForm">
+         
+          <div class="form-group">
+            <label for="username">Потребителско име:</label>
+            <input ngModel #username="ngModel" required name="username" type="text" class="form-control small" placeholder="Потребителско име" id="username">
+            <small *ngIf="!username.valid && username.touched">Полето е задължително!</small>
+            <small *ngIf="usedUsername">{{usedUsername}}</small>
+          </div>
+          <div class="form-group">
+            <label for="password">Парола:</label>
+            <input ngModel required #pass="ngModel" name="password" type="password" class="form-control small" placeholder="Парола" id="password">
+            <small *ngIf="!pass.valid && pass.touched">Полето е задължително!</small>
+          </div>
+          <div class="form-group">
+            <label for="firstName">Име:</label>
+            <input ngModel required #fName="ngModel" name="firstName" type="text" class="form-control small" placeholder="Име" id="firstName">
+            <small *ngIf="!fName.valid && fName.touched">Полето е задължително!</small>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Фамилия:</label>
+            <input ngModel required #lName="ngModel" name="lastName" type="text" class="form-control small" placeholder="Фамилия" id="lastName">
+            <small *ngIf="!lName.valid && lName.touched">Полето е задължително!</small>
+
+          </div>
+          <div class="form-group">
+            <label for="email">Мейл:</label>
+            <input ngModel required email #email="ngModel" name="email" type="email" class="form-control small" placeholder="Мейл" id="email">
+            <small *ngIf="email.touched">Полето е задължително!</small>
+            <small *ngIf="!email.valid && email.touched">Въведете валиден мейл!</small>
+            <small *ngIf="usedEmail">{{usedEmail}}</small>
+          </div>
+          <div class="form-group">
+            <label for="adminReg">Регистрация Администратор</label><br/>
+            <input ngModel name="adminReg" type="radio" value="true" (input)="onAdminReg($event)" (click)=onHide() id="adminReg">
+            <p>* Само за администратори!</p>
+          </div>
+          <div *ngIf="adminRegistration" class="form-group">
+            <label for="secret">Секретен код:</label>
+            <input ngModel name="secret" type="text" class="form-control small" placeholder="Секретен код" id="secret">
+          </div>
+          <button type="submit" [disabled]="!adminForm.valid ? true : false" class="btn btn-primary">Регистрация</button>
+       
+         
+        </form>
+      </div>
+    </div>
+    </div>
+

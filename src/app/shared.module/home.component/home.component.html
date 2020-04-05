@@ -1,0 +1,55 @@
+
+<div class="container">
+      
+       <span class="arrowContainer arrowContainerLeft"> 
+                <div id="left-arrow" class="arrow" (click)="onChaneImageBack()"></div>
+        </span>
+
+        <span class="mainImage">
+                <a class="link" href="#" routerLink="/products">
+                        <img class="image" *ngIf="image" [@changeImage] [src]="image"/>
+                </a>
+        </span>
+
+        <span class="arrowContainer arrowContainerRight">
+                <div id="right-arrow" class="arrow" (click)="onChaneImageForward()"></div>
+        </span>
+       
+</div>
+
+<div class="productItems" >
+        <div class="item" *ngFor="let category of categories; let i  = index">
+                <a routerLink="category"  [queryParams] = "{name : category.getName}" href="#"><img class="itemImage" class="img-responsive"  [src]="categoryImages[i]"/></a>
+        </div>
+       <!-- <div class="item">
+                <a routerLink="/products" [queryParams] = "{category : 'кухня'}" href="#"><img class="itemImage" class="img-responsive" [src]="categoryImages[1]"/></a>
+        </div>
+        <div class="item">
+                <a routerLink="/products" [queryParams] = "{category : 'секция'}" href="#"><img class="itemImage" class="img-responsive" [src]="categoryImages[2]"/></a>
+        </div>
+
+
+       
+        <div class="item">
+                <a routerLink="/products" [queryParams] = "{category : 'спалня'}" href="#"><img class="itemImage" class="img-responsive"  [src]="categoryImages[3]"/></a>
+        </div>
+        <div class="item">
+                <a routerLink="/products" [queryParams] = "{category : 'стол'}" href="#"><img class="itemImage"  class="img-responsive" [src]="categoryImages[4]"/></a>
+        </div>
+        <div class="item">
+                <a routerLink="/products" [queryParams] = "{category : 'гардероб'}" href="#"><img class="itemImage"  class="img-responsive" [src]="categoryImages[5]"/></a>
+        </div>
+
+
+       
+        <div class="item">
+                <a routerLink="/products" [queryParams] = "{category : 'детски'}" href="#"><img class="itemImage"  class="img-responsive" [src]="categoryImages[6]"/></a>
+        </div>
+        <div class="item">
+                <a routerLink="/products" [queryParams] = "{category : 'маса'}" href="#"><img class="itemImage"  class="img-responsive" [src]="categoryImages[7]"/></a>
+        </div>
+        <div class="item">
+                <a routerLink="/products" [queryParams] = "{category : 'офис'}" href="#"><img class="itemImage"  class="img-responsive" [src]="categoryImages[8]"/></a>
+        </div>-->
+</div>
+
